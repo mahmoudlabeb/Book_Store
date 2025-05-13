@@ -1,0 +1,255 @@
+{
+  "info": {
+    "name": "BookStore API No Auth (owners)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User Register",
+      "request": {
+        "auth": {"type": "noauth"},
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Alice\",\n    \"email\": \"alice@example.com\",\n    \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "register"]
+        }
+      }
+    },
+    {
+      "name": "User Login",
+      "request": {
+        "auth": {"type": "noauth"},
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"alice@example.com\",\n    \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "users", "login"]
+        }
+      }
+    },
+    {
+  "name": "Get All Users",
+  "request": {
+    "auth": { "type": "noauth" },
+    "method": "GET",
+    "url": {
+      "raw": "http://localhost:3000/api/users",
+      "protocol": "http",
+      "host": ["localhost"],
+      "port": "3000",
+      "path": ["api", "users"]
+    }
+  }
+},
+{
+  "name": "Get User by ID",
+  "request": {
+    "auth": { "type": "noauth" },
+    "method": "GET",
+    "url": {
+      "raw": "http://localhost:3000/api/users/:id",
+      "protocol": "http",
+      "host": ["localhost"],
+      "port": "3000",
+      "path": ["api", "users", ":id"]
+    }
+  }
+},
+
+{
+  "name": "Delete User by ID",
+  "request": {
+    "auth": { "type": "noauth" },
+    "method": "DELETE",
+    "url": {
+      "raw": "http://localhost:3000/api/users/:id",
+      "protocol": "http",
+      "host": ["localhost"],
+      "port": "3000",
+      "path": ["api", "users", ":id"]
+    }
+  }
+},
+
+
+
+
+
+
+
+
+    {
+      "name": "Create Book",
+      "request": {
+        "auth": {"type": "noauth"},
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Clean Code\",\n    \"author\": \"Robert C. Martin\",\n    \"category\": \"Programming\",\n    \"price\": 180,\n    \"description\": \"Best practices\",\n    \"owners\": [\"<userId>\"]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/books",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "books"]
+        }
+      }
+    },
+    {
+      "name": "create Multiple Books",
+      "request": {
+        "auth": {"type": "noauth"},
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n  {\n    \"title\": \"Book One\",\n    \"author\": \"Author One\",\n    \"category\": \"Fiction\",\n    \"price\": 100,\n    \"description\": \"First book\",\n    \"owners\": [\"<userId1>\", \"<userId2>\"]\n  },\n  {\n    \"title\": \"Book Two\",\n    \"author\": \"Author Two\",\n    \"category\": \"Science\",\n    \"price\": 150,\n    \"description\": \"Second book\",\n    \"owners\": [\"<userId1>\"]\n  }\n]"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/books/bulk",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "books", "bulk"]
+        }
+    }
+    },
+    {
+      "name": "Get All Books",
+      "request": {
+        "auth": {"type": "noauth"},
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/books",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "books"]
+        }
+      }
+    },
+    {
+      "name": "Get Book by ID",
+      "request": {
+        "auth": {"type": "noauth"},
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/books/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "books", ":id"]
+        }
+      }
+    },
+
+    {
+  "name": "Get Books by Username",
+  "request": {
+    "auth": { "type": "noauth" },
+    "method": "GET",
+    "url": {
+      "raw": "http://localhost:3000/api/books/user/:username",
+      "protocol": "http",
+      "host": ["localhost"],
+      "port": "3000",
+      "path": ["api", "books", "user", ":username"]
+    }
+  }
+},
+{
+  "name": "Get Books by Title",
+  "request": {
+    "auth": { "type": "noauth" },
+    "method": "GET",
+    "url": {
+      "raw": "http://localhost:3000/api/books/title/:title",
+      "protocol": "http",
+      "host": ["localhost"],
+      "port": "3000",
+      "path": ["api", "books", "title", ":title"]
+    }
+  }
+},
+    {
+      "name": "Update Book",
+      "request": {
+        "auth": {"type": "noauth"},
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"price\": 200,\n    \"owners\": [\"<userId1>\", \"<userId2>\"]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/books/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "books", ":id"]
+        }
+    }
+    },
+    {
+      "name": "Delete Book",
+      "request": {
+        "auth": {"type": "noauth"},
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:3000/api/books/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "books", ":id"]
+        }
+      }
+    },
+    {
+      "name": "Filter by Category",
+      "request": {
+        "auth": {"type": "noauth"},
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/books?category=Programming",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "books"],
+          "query": [{"key": "category", "value": "Programming"}]
+        }
+      }
+    },
+    {
+      "name": "Filter by Max Price",
+      "request": {
+        "auth": {"type": "noauth"},
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/books?maxPrice=150",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "books"],
+          "query": [{"key": "maxPrice", "value": "150"}]
+        }
+      }
+    }
+  ]
+}
